@@ -30,28 +30,26 @@ def transform_text(text):
 
     return " ".join(y) 
 
-if not os.path.exists('vectorizer.pkl') or not os.path.exists('model.pkl'):
-    st.error("Required files not found. Ensure 'vectorizer.pkl' and 'model.pkl' are uploaded.")
-else:
-    tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
-    model = pickle.load(open('model.pkl', 'rb'))
+
+tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
     
-    st.title("Email/SMS Spam Classifier")
-    input_sms = st.text_input("Enter the message")
+st.title("Email/SMS Spam Classifier")
+input_sms = st.text_input("Enter the message")
 
-    if st.button('Predict') :
-        # 1. preprocess
-        transformed_sms = transform_text(input_sms)
+if st.button('Predict') :
+    # 1. preprocess
+    transformed_sms = transform_text(input_sms)
 
-        # 2. vectorize
-        vector_input = tfidf.transform([transformed_sms])
+    # 2. vectorize
+    vector_input = tfidf.transform([transformed_sms])
 
-        # 3. predict
-        result = model.predict(vector_input)[0]
+    # 3. predict
+    result = model.predict(vector_input)[0]
 
-        # 4. Display
-        if result == 1 :
-            st.header("Spam")
-        else :
-            st.header("Not Spam")
+    # 4. Display
+    if result == 1 :
+        st.header("Spam")
+    else :
+        st.header("Not Spam")
             

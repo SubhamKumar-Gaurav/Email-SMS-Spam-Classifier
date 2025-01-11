@@ -182,3 +182,13 @@ Contributions are welcome! If you have suggestions for improvements or want to r
 - [Kaggle](https://www.kaggle.com/) for providing SMS spam datasets.
 - [NLTK Documentation](https://www.nltk.org/) for text preprocessing techniques.
 - [Streamlit](https://streamlit.io/) for simplifying web app development.
+
+---
+  
+## Contact
+For any questions or feedback, please reach out to:
+
+Subham Kumar Gaurav: subhamgaurav2001@gmail.com  
+GitHub: [SubhamKumar-Gaurav](https://github.com/SubhamKumar-Gaurav)
+
+---
